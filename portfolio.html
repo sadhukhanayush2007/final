@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bristi Bhat | Portfolio</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+      background: #f4f4f4;
+    }
+
+    nav {
+      background: #222;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00e6e6;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #00bcd4;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 220px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #e0f7fa;
+      margin: 8px auto;
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+    }
+
+    #msg {
+      color: green;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#internship">Internship</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Hello, I'm AYUSH SADHUKHAN</h1>
+    <p>Intern at YCSAS | Web Development Enthusiast</p>
+    <button onclick="scrollToContact()">Contact Me</button>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science student passionate about web development.
+      I joined the YCSAS Internship to gain hands-on experience and improve my technical skills.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <!-- Internship -->
+  <section id="internship">
+    <h2>YCSAS Internship</h2>
+    <p>
+      Internship Name: YCSAS Web Development Internship <br><br>
+      Technologies Learned: HTML, CSS, JavaScript <br><br>
+      Experience Gained: Built responsive websites and interactive projects.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects / Tasks</h2>
+    <ul>
+      <li>Personal Portfolio Website</li>
+      <li>Landing Page</li>
+      <li>Form Validation using JavaScript</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name"><br>
+      <input type="email" id="email" placeholder="Your Email"><br>
+      <button type="submit">Send</button>
+    </form>
+    <p id="msg"></p>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    function scrollToContact() {
+      document.getElementById("contact").scrollIntoView();
+    }
+
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+
+      if (name === "" || email === "") {
+        document.getElementById("msg").innerText = "Please fill all fields!";
+        document.getElementById("msg").style.color = "red";
+        return false;
+      }
+
+      document.getElementById("msg").innerText = "Message sent successfully!";
+      document.getElementById("msg").style.color = "green";
+      return false;
+    }
+  </script>
+
+</body>
+</html>
